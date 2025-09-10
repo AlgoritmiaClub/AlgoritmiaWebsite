@@ -9,7 +9,9 @@ import { getFeaturedSuccessStories } from "@/lib/application/use-cases/get-featu
 import { getMemberRepository } from "@/lib/infrastructure/repositories";
 import { getSuccessStoryRepository } from "@/lib/infrastructure/repositories";
 import { HeroSection } from "@/components/home/HeroSection";
-import { SuccessStoriesGallery } from "@/components/home/SuccessStoriesGallery";
+import { MissionVisionSection } from "@/components/home/MissionVisionSection";
+// import { SuccessStoriesGallery } from "@/components/home/SuccessStoriesGallery";
+import { SuccessStoriesMarquee } from "@/components/home/SuccessStoriesMarquee";
 
 /**
  * The Home page component.
@@ -26,7 +28,9 @@ export default async function Home() {
   return (
     <main>
       <HeroSection />
-      <SuccessStoriesGallery stories={featuredStories} />
+      <MissionVisionSection />
+      {/* <SuccessStoriesGallery stories={featuredStories} /> */}
+      <SuccessStoriesMarquee stories={featuredStories} />
     </main>
   );
 }
