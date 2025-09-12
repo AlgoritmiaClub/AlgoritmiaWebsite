@@ -9,6 +9,8 @@ import { getFeaturedSuccessStories } from "@/lib/application/use-cases/get-featu
 import { getMemberRepository } from "@/lib/infrastructure/repositories";
 import { getSuccessStoryRepository } from "@/lib/infrastructure/repositories";
 import { HeroSection } from "@/components/home/HeroSection";
+import { NewHeroSection } from "@/components/home/NewHeroSection";
+import { FeaturedEventSection } from "@/components/home/FeaturedEventSection";
 import { ActivitiesSection } from "@/components/home/ActivitiesSection";
 import { MissionVisionSection } from "@/components/home/MissionVisionSection";
 // import { SuccessStoriesGallery } from "@/components/home/SuccessStoriesGallery";
@@ -29,11 +31,13 @@ export default async function Home() {
 
   return (
     <main>
+      <NewHeroSection />
+      <FeaturedEventSection />
       <HeroSection />
+      <SuccessStoriesMarquee stories={featuredStories} />
       <MissionVisionSection />
       <ActivitiesSection />
       {/* <SuccessStoriesGallery stories={featuredStories} /> */}
-      <SuccessStoriesMarquee stories={featuredStories} />
       <TeamPhotoSection />
     </main>
   );

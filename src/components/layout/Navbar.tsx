@@ -19,7 +19,7 @@ export function Navbar() {
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center space-x-2">
             <Image src="/logo.svg" alt="Algoritmia Club Logo" width={40} height={40} />
-            <span className="text-2xl font-bold text-brand-blue">Algoritmia</span>
+
           </Link>
           <nav>
             <ul className="flex items-center space-x-6">
@@ -31,6 +31,11 @@ export function Navbar() {
               <li>
                 <Link href="/talent" className="text-gray-600 hover:text-brand-blue transition-colors">
                   Talent
+                </Link>
+              </li>
+              <li>
+                <Link href="/agenda" className="text-gray-600 hover:text-brand-blue transition-colors">
+                  Agenda
                 </Link>
               </li>
               {/* Future links like About, Contact can be added here */}

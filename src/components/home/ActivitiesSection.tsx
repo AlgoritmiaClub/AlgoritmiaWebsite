@@ -131,7 +131,7 @@ export function ActivitiesSection() {
   };
 
   return (
-    <section className="relative bg-gray-50 py-20 overflow-hidden">
+    <section id="activities-section" className="relative bg-gray-50 py-20 overflow-hidden">
       <Image
         src="/images/Modo Claro.png"
         alt=""
@@ -147,7 +147,7 @@ export function ActivitiesSection() {
         className="absolute -right-48 -bottom-48 opacity-50 transform -scale-x-100 hidden md:block"
       />
       <div className="mx-auto px-4 py-8 text-center bg-grey-50">
-        <h2 className="text-3xl text-brand-dark-blue font-bold mb-4">What We Do</h2>
+        <h2 className="text-4xl text-brand-dark-blue font-bold mb-4">What We Do</h2>
 
         <div className="max-w-2xl mx-auto">
           {/* Card Container */}
@@ -178,7 +178,7 @@ export function ActivitiesSection() {
               >
                 <div
                   key={index === activeIndex ? activeIndex : `inactive-${index}`}
-                  className={`h-full bg-brand-cyan rounded-full transition-opacity duration-500 ${activeIndex === index
+                  className={`h-full bg-brand-dark-blue rounded-full transition-opacity duration-500 ${activeIndex === index
                     ? "opacity-100 animation-fill"
                     : "opacity-0"
                     }`}

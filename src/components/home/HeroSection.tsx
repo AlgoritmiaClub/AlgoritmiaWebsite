@@ -29,7 +29,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative bg-gray-50 overflow-hidden min-h-[450px]">
+    <section id="hero-section" className="relative bg-brand-dark-blue overflow-hidden min-h-[450px]">
       {/* Animated Background Overlay */}
       <div
         style={{ backgroundImage: "linear-gradient(to right, var(--brand-dark-blue) 92%, transparent 100%)" }}
@@ -55,7 +55,7 @@ export function HeroSection() {
               View Our Talent
             </Link>
             <Link
-              href="/about"
+              href="/#activities-section"
               className="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
             >
               Learn More

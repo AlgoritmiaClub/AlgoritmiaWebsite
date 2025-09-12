@@ -8,6 +8,7 @@
 import { getAllMembers } from "@/lib/application/use-cases/get-all-members";
 import { getMemberRepository } from "@/lib/infrastructure/repositories";
 import { TalentDirectory } from "@/components/talent/TalentDirectory";
+import { TalentPageHeader } from "@/components/talent/TalentPageHeader";
 
 /**
  * The Talent Directory page component.
@@ -21,9 +22,11 @@ export default async function TalentPage() {
   const members = await getAllMembers(memberRepo);
 
   return (
-    <main className="container mx-auto px-10 py-8">
-      <h1 className="text-4xl font-bold mb-8 text-left text-brand-dark-blue">Our Talent</h1>
-      <TalentDirectory members={members} />
+    <main className="bg-gradient-to-b from-[#0075C9] via-[#A1FFFF] via-[20rem] to-white to-[30rem]">
+      <div className="container mx-auto px-10 py-8">
+        <TalentPageHeader />
+        <TalentDirectory members={members} />
+      </div>
     </main>
   );
 }

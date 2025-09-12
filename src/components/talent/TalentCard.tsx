@@ -41,7 +41,7 @@ export function TalentCard({ member, onSelect }: TalentCardProps) {
         {member.skills.slice(0, 4).map((skill) => (
           <span
             key={skill}
-            className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium"
+            className="bg-brand-light text-gray-700 px-3 py-1 rounded-full text-xs font-medium"
           >
             {skill}
           </span>
