@@ -21,7 +21,7 @@ export default async function TalentPage() {
   const members = await getAllMembers(memberRepo);
 
   return (
-    <main className="container mx-auto py-8">
+    <main className="container mx-auto px-10 py-8">
       <h1 className="text-4xl font-bold mb-8 text-left text-brand-dark-blue">Our Talent</h1>
       <TalentDirectory members={members} />
     </main>

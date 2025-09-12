@@ -10,6 +10,21 @@
   }
 }
 
+@keyframes fill {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animation-fill {
+  animation: fill 5s linear;
+  transform-origin: left;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
