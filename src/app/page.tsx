@@ -12,6 +12,7 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { MissionVisionSection } from "@/components/home/MissionVisionSection";
 // import { SuccessStoriesGallery } from "@/components/home/SuccessStoriesGallery";
 import { SuccessStoriesMarquee } from "@/components/home/SuccessStoriesMarquee";
+import { TeamPhotoSection } from "@/components/home/TeamPhotoSection";
 
 /**
  * The Home page component.
@@ -31,6 +32,7 @@ export default async function Home() {
       <MissionVisionSection />
       {/* <SuccessStoriesGallery stories={featuredStories} /> */}
       <SuccessStoriesMarquee stories={featuredStories} />
+      <TeamPhotoSection />
     </main>
   );
 }

@@ -49,7 +49,7 @@ export function TalentDirectory({ members }: TalentDirectoryProps) {
         <input
           type="text"
           placeholder="Search by name, role, or skill..."
-          className="w-full px-4 py-2 border rounded-lg"
+          className="w-full px-4 py-2 border rounded-lg placeholder-brand-dark-blue text-black opacity-40"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />

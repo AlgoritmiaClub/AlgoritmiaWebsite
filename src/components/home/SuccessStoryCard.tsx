@@ -19,7 +19,7 @@ interface SuccessStoryCardProps {
  */
 export function SuccessStoryCard({ story }: SuccessStoryCardProps) {
   return (
-    <div className="border rounded-lg p-6 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow duration-300">
+    <div className="border rounded-lg p-6 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow duration-300 bg-[#eef3de]">
       <blockquote className="italic text-gray-700 mb-4 flex-grow">
         <p>"{story.quote}"</p>
       </blockquote>
@@ -31,10 +31,17 @@ export function SuccessStoryCard({ story }: SuccessStoryCardProps) {
           height={48}
           className="rounded-full mr-4 object-cover w-12 h-12"
         />
-        <div>
-          <h3 className="font-semibold text-lg">{story.memberName}</h3>
+        <div className="flex-grow">
+          <h3 className="font-semibold text-lg text-[#0f1e2f]">{story.memberName}</h3>
           <p className="text-gray-500">Landed a job at {story.company}</p>
         </div>
+        <Image
+          src={story.companyLogoUrl}
+          alt={`${story.company} logo`}
+          width={80} // Adjust size as needed
+          height={40} // Adjust size as needed
+          className="object-contain self-end"
+        />
       </div>
     </div>
   );

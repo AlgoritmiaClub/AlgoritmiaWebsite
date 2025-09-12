@@ -21,11 +21,11 @@ interface MemberModalProps {
 export function MemberModal({ member, onClose }: MemberModalProps) {
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 z-40 flex justify-center items-center"
+      className="fixed inset-0 bg-[url('/images/algo_inv.jpg')] bg-cover bg-center bg-opacity-50 z-40 flex justify-center items-center"
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full relative transform transition-all duration-300 scale-95 hover:scale-100"
+        className="bg-white/80 backdrop-blur-sm rounded-lg shadow-2xl p-8 max-w-2xl w-full relative transform transition-all duration-300 scale-95 hover:scale-100"
         onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
       >
         <button
@@ -45,16 +45,16 @@ export function MemberModal({ member, onClose }: MemberModalProps) {
               height={150}
               className="rounded-full mx-auto object-cover w-36 h-36"
             />
-            <h2 className="text-2xl font-bold mt-4">{member.name}</h2>
+            <h2 className="text-2xl text-brand-dark-blue font-bold mt-4">{member.name}</h2>
             <p className="text-lg text-gray-600">{member.role}</p>
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-semibold border-b pb-2 mb-2">Biography</h3>
+            <h3 className="text-lg text-brand-blue font-semibold border-b pb-2 mb-2">Biography</h3>
             <p className="text-gray-700 mb-4">{member.biography}</p>
-            <h3 className="text-lg font-semibold border-b pb-2 mb-2">Skills</h3>
+            <h3 className="text-lg text-brand-blue font-semibold border-b pb-2 mb-2">Skills</h3>
             <div className="flex flex-wrap gap-2">
               {member.skills.map((skill) => (
-                <span key={skill} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                <span key={skill} className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
                   {skill}
                 </span>
               ))}

@@ -21,7 +21,7 @@ interface TalentCardProps {
 export function TalentCard({ member, onSelect }: TalentCardProps) {
   return (
     <div
-      className="border rounded-lg p-4 text-center shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+      className="border bg-grey-50 rounded-lg p-4 text-center shadow-md hover:shadow-lg cursor-pointer transform transition-all duration-300 scale-95 hover:scale-100 grayscale-[80%] hover:grayscale-0"
       onClick={onSelect}
     >
       {/* The Next.js Image component requires a remotePatterns configuration in next.config.ts to work with external URLs. For now, we assume local images or placeholders. */}
@@ -31,10 +31,10 @@ export function TalentCard({ member, onSelect }: TalentCardProps) {
         width={128}
         height={128}
         className="rounded-full mx-auto mb-4 object-cover w-32 h-32"
-        // In a real app, you might want a placeholder for missing images
-        // onError={(e) => { e.currentTarget.src = '/images/default-avatar.png'; }}
+      // TODO: a placeholder for missing images
+      // onError={(e) => { e.currentTarget.src = '/images/default-avatar.png'; }}
       />
-      <h2 className="text-xl font-semibold">{member.name}</h2>
+      <h2 className="text-xl text-brand-blue font-semibold">{member.name}</h2>
       <p className="text-gray-500">{member.role}</p>
       <div className="mt-4 flex flex-wrap justify-center gap-2">
         {/* Displaying a subset of skills */}

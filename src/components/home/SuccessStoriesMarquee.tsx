@@ -25,7 +25,7 @@ export function SuccessStoriesMarquee({ stories }: SuccessStoriesMarqueeProps) {
   return (
     <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Success Stories</h2>
+        <h2 className="text-3xl text-brand-dark-blue font-bold text-center mb-8">Success Stories</h2>
         <div
           className="group relative w-full overflow-hidden"
           // Add a mask to fade out the edges for a cleaner look
