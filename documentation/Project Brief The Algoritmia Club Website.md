@@ -59,3 +59,10 @@ To achieve our goals, the initial version of the website will include the follow
 Features such as an internal member-only hub or a blog are considered out of scope for the initial launch but may be developed in a future "Phase 2."
 
 The intended tech stack is Next.js + Tailwind CSS + Markdown + Vercel.
+The Algoritmia color palette is:
+- brand blue: #101fa8
+- #0f1e2f
+- #176c88
+- #00b0a9
+- #eef3de
+

@@ -75,3 +75,21 @@ This document outlines two distinct development plans to enhance the `SuccessSto
 6.  **Apply Animation and Hover Effect:**
     *   Apply the `animate-scroll` class to the inner flex container.
     *   To implement the pause-on-hover feature, wrap the gallery in a `div` with the `group` class. Then, on the animated element, add the utility class `group-hover:[animation-play-state:paused]`.
+
+### **Follow-up: Implementing the Infinite Marquee**
+
+This section details the concrete steps to refactor the existing `SuccessStoriesMarquee.tsx` to implement a seamless, infinite scroll.
+
+1.  **Objective:** Fix the marquee so that the animation loops continuously without a visual "jump" or reset, regardless of the number of story cards.
+
+2.  **Core Strategy:** The key is to duplicate the list of stories. By rendering the list twice and animating the container by the width of the original, non-duplicated list, the animation can reset to its starting point without any visible interruption, creating a perfect loop.
+
+3.  **Implementation Steps for `SuccessStoriesMarquee.tsx`:**
+    *   **Duplicate the `stories` array:** Inside the component, create a new array that contains the original stories followed by a copy of themselves. This doubled array will be used for rendering.
+        ```javascript
+        const duplicatedStories = [...stories, ...stories];
+        ```
+    *   **Modify the JSX:** The `map` function will now iterate over `duplicatedStories` to render the `SuccessStoryCard` components.
+    *   **Update CSS Animation:** The animation will be configured to translate the container by `-50%` on the X-axis, which corresponds to the length of the original, single set of stories.
+    *   **Adjust Animation Duration:** The animation duration will be made dynamic or set to a sufficiently long value to ensure the scroll speed is slow and pleasant. A good starting point is `20s` per story (e.g., `duration: stories.length * 20s`).
+    *   **Add Pause on Hover:** The component will be wrapped in a `group` class, and the `group-hover:[animation-play-state:paused]` class will be added to the animated element to provide this essential UX feature.

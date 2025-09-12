@@ -93,3 +93,31 @@ This document summarizes the development progress of the Algoritmia Club website
 4.  **Navigation:**
     *   Created a primary `Navbar` component in `/src/components/layout/`.
     *   Integrated the `Navbar` into the root `layout.tsx`, ensuring it appears on all pages for consistent site-wide navigation.
+
+---
+
+## Phase 4: Homepage Design Refinements (Complete)
+
+**Goal:** Iteratively improve the design and interactivity of the homepage based on new ideas.
+
+**Outcome:** The homepage now features more dynamic and polished animations and a richer layout.
+
+### Key Tasks Completed:
+
+1.  **Mission & Vision Section:**
+    *   Designed and implemented a new `MissionVisionSection` component.
+    *   This section was placed between the `HeroSection` and the `SuccessStories` to improve the narrative flow of the page.
+
+2.  **Hero Section Animation:**
+    *   Converted the `HeroSection` into a dynamic, animated Client Component.
+    *   **Animation:** After a 2-second delay, the section animates from a full-width dark panel to a 50/50 split layout.
+    *   **Faded Transition:** Implemented a "feathered edge" effect. The dark panel is now a `linear-gradient` that fades to transparent, creating a soft blend into the adjacent light panel instead of a hard edge.
+    *   **Choreographed Reveal:** The logo on the right side is animated to fade in with a slight delay, making it appear as if it's being revealed by the background animation.
+
+3.  **Team Photo Section:**
+    *   Created a new `TeamPhotoSection` component.
+    *   Added the full-width group photo to the very end of the homepage to serve as a closing visual.
+
+4. **Sucess Stories Section:**
+    *   Changed the success stories component from a grid view to a marquee.
+    
