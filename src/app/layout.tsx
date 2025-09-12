@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Club Algoritmia | Home",
   description: "The official website for the Algoritmia Club.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
