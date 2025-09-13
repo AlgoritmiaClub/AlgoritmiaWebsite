@@ -31,7 +31,7 @@ export class MarkdownAgendaEventRepository implements IAgendaEventRepository {
           return {
             id: file.replace(/\.md$/, ""),
             title: data.title,
-            date: new Date(`${data.date}T00:00`),
+            date: new Date(`${data.date}`),
             description: data.description,
             tags: data.tags || [],
             imageUrl: data.imageUrl,
@@ -56,10 +56,11 @@ export class MarkdownAgendaEventRepository implements IAgendaEventRepository {
    */
   async findFeaturedEvent(): Promise<AgendaEvent | null> {
     const allEvents = await this.getAllEvents();
-    const now = new Date();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Set time to the beginning of the day
 
     const upcomingEvents = allEvents
-      .filter((event) => event.date > now)
+      .filter((event) => event.date >= today) // Filter for events from today onwards
       .sort((a, b) => a.date.getTime() - b.date.getTime());
 
     return upcomingEvents[0] || null;
