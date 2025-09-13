@@ -27,7 +27,7 @@ export function ActivityCard({
 }: ActivityCardProps) {
   return (
     <div
-      className={`absolute inset-0 p-8 rounded-2xl bg-brand-blue border border-brand-dark-blue shadow-lg transition-all duration-500 ease-in-out hover:border-brand-light
+      className={`absolute inset-0 p-8 rounded-2xl bg-brand-blue/20 backdrop-blur-lg border border-brand-dark-blue/20 shadow-lg transition-all duration-500 ease-in-out hover:border-brand-dark-blue/40
         ${isActive
           ? "z-20 opacity-100 transform-none"
           : isNext

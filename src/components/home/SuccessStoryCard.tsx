@@ -19,7 +19,7 @@ interface SuccessStoryCardProps {
  */
 export function SuccessStoryCard({ story }: SuccessStoryCardProps) {
   return (
-    <div className="border rounded-lg p-6 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow duration-300 bg-brand-light">
+    <div className="border rounded-3xl p-6 flex flex-col h-full shadow-md hover:shadow-lg transition-all duration-300 bg-brand-light/40 hover:bg-brand-light/80">
       <blockquote className="italic text-gray-700 mb-4 flex-grow">
         <p>"{story.quote}"</p>
       </blockquote>
