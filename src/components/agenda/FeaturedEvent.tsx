@@ -32,7 +32,7 @@ export function FeaturedEvent({ event }: FeaturedEventProps) {
           ))}
         </div>
         <button className="mt-8 bg-brand-dark-blue text-white font-bold py-3 px-8 rounded-full hover:bg-brand-blue transition-colors duration-300">
-          RSVP
+          RSVP (Work in progress)
         </button>
       </div>
       <div>
