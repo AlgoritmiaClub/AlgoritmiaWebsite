@@ -7,7 +7,6 @@
 
 import { IAgendaEventRepository } from "@/lib/infrastructure/repositories/IAgendaEventRepository";
 import { FeaturedEventDTO, ArchivedEventDTO } from "../dtos/eventDTOs";
-import { AgendaEvent } from "@/lib/domain/AgendaEvent";
 
 /**
  * Formats a Date object into a string like "Sabado 10 de Enero del 2024".

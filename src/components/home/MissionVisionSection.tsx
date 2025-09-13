@@ -76,7 +76,7 @@ export function MissionVisionSection() {
             <VisionIcon />
             <h2 className="text-3xl text-brand-dark-blue font-bold mb-4">Our Vision</h2>
             <p className="text-gray-600 leading-relaxed">
-              To be the university's most respected and effective launchpad for
+              To be the university&apos;s most respected and effective launchpad for
               aspiring tech professionals, recognized by top employers as a
               premier source of industry-ready talent.
             </p>

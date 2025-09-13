@@ -72,7 +72,7 @@ export function SubmissionForm() {
 
       {/* Role */}
       <div>
-        <label htmlFor="role" className="block text-sm font-medium text-gray-700">Current Role (e.g., "Software Engineer")</label>
+        <label htmlFor="role" className="block text-sm font-medium text-gray-700">Current Role (e.g., &quot;Software Engineer&quot;)</label>
         <input
           type="text"
           id="role"
@@ -95,7 +95,7 @@ export function SubmissionForm() {
           placeholder="https://linkedin.com/in/your-name/profile.jpg"
           required
         />
-         <p className="mt-2 text-xs text-gray-500">Please provide a direct URL to an image. You can often get this from your LinkedIn profile.</p>
+        <p className="mt-2 text-xs text-gray-500">Please provide a direct URL to an image. You can often get this from your LinkedIn profile.</p>
       </div>
 
       {/* LinkedIn URL */}
@@ -154,8 +154,8 @@ export function SubmissionForm() {
       </div>
 
       <div className="pt-4">
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           disabled={status === 'submitting'}
           className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-blue hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue disabled:bg-slate-400"
         >

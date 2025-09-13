@@ -5,9 +5,8 @@
  * @license MIT
  */
 
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, type Mock } from "vitest";
 import { MarkdownMemberRepository } from "../MarkdownMemberRepository";
-import { Member } from "@/lib/domain/member";
 
 // Mock the fs/promises module
 vi.mock("fs/promises", () => ({
@@ -65,7 +64,7 @@ This file is malformed.
 
   describe("findById", () => {
     it("should return a fully populated member object for a valid ID", async () => {
-      fs.default.readFile.mockResolvedValue(mockJaneDoe);
+      (fs.default.readFile as Mock).mockResolvedValue(mockJaneDoe);
 
       const member = await repository.findById("jane-doe");
 
@@ -81,7 +80,7 @@ This file is malformed.
     });
 
     it("should return a member with default values for optional fields", async () => {
-      fs.default.readFile.mockResolvedValue(mockJohnSmith);
+      (fs.default.readFile as Mock).mockResolvedValue(mockJohnSmith);
 
       const member = await repository.findById("john-smith");
 
@@ -93,7 +92,7 @@ This file is malformed.
     });
 
     it("should return null if the file is not found", async () => {
-      fs.default.readFile.mockRejectedValue(new Error("File not found"));
+      (fs.default.readFile as Mock).mockRejectedValue(new Error("File not found"));
 
       const member = await repository.findById("non-existent");
 
@@ -101,7 +100,7 @@ This file is malformed.
     });
 
     it("should return null for a malformed file (missing required fields)", async () => {
-      fs.default.readFile.mockResolvedValue(mockMalformedFile);
+      (fs.default.readFile as Mock).mockResolvedValue(mockMalformedFile);
 
       const member = await repository.findById("malformed");
 
@@ -112,7 +111,7 @@ This file is malformed.
   describe("findAll", () => {
     it("should return an array of all valid members", async () => {
       // Setup readdir to return a list of files
-      fs.default.readdir.mockResolvedValue([
+      (fs.default.readdir as Mock).mockResolvedValue([
         "jane-doe.md",
         "john-smith.md",
         "malformed.md",
@@ -120,7 +119,7 @@ This file is malformed.
       ]);
 
       // Setup readFile to return different content based on the file name
-      fs.default.readFile.mockImplementation((filePath) => {
+      (fs.default.readFile as Mock).mockImplementation((filePath) => {
         const fileName = filePath.toString().split("\\").pop();
         if (fileName === "jane-doe.md") return Promise.resolve(mockJaneDoe);
         if (fileName === "john-smith.md") return Promise.resolve(mockJohnSmith);
@@ -138,7 +137,7 @@ This file is malformed.
     });
 
     it("should return an empty array if the directory cannot be read", async () => {
-      fs.default.readdir.mockRejectedValue(new Error("Directory not found"));
+      (fs.default.readdir as Mock).mockRejectedValue(new Error("Directory not found"));
 
       const members = await repository.findAll();
 
