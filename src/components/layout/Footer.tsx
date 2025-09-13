@@ -26,7 +26,19 @@ export function Footer() {
               className="hover:opacity-80 transition-opacity"
             />
           </Link>
-          <span>Copyright &copy; {new Date().getFullYear()}</span>
+          <div>
+            <span>Copyright &copy; {new Date().getFullYear()}</span>
+            <p className="mt-1">
+              Built by{" "}
+              <a href="https://www.linkedin.com/in/leonardocumplido21/" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">
+                Leo Cumplido
+              </a>{" "}
+              with the design of{" "}
+              <a href="https://www.nolbertocastro.com/Portfolio" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">
+                Nolberto Castro
+              </a>
+            </p>
+          </div>
         </div>
         <div className="font-mono">
           <span>&middot; Connect &middot; the &middot; dots</span>

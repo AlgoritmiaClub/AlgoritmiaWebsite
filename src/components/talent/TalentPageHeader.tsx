@@ -23,7 +23,7 @@ export function TalentPageHeader() {
       <section className="mb-12 flex items-center py-12 text-left bg-[url('/images/Frame_91.png')] bg-no-repeat bg-right bg-contain">
         <div>
           <h1 className="text-5xl font-extrabold text-white">Our Talent</h1>
-          <p className="mt-4 text-lg text-white max-w-2xl">
+          <p className="mt-4 text-lg text-white max-w-2xl [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
             Meet the brilliant minds of Algoritmia. A curated directory of our
             skilled members ready to take on new challenges.
           </p>
