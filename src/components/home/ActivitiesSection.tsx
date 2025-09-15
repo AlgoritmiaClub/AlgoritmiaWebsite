@@ -137,17 +137,17 @@ export function ActivitiesSection() {
         alt=""
         width={500}
         height={500}
-        className="absolute -left-48 -top-32 opacity-50 hidden md:block"
+        className="absolute -left-48 -top-32 opacity-50"
       />
       <Image
         src="/images/Modo Claro.png"
         alt=""
         width={500}
         height={500}
-        className="absolute -right-48 -bottom-48 opacity-50 transform -scale-x-100 hidden md:block"
+        className="absolute -right-48 -bottom-48 opacity-50"
       />
-      <div className="mx-auto px-4 py-8 text-center bg-grey-50">
-        <h2 className="text-4xl text-brand-dark-blue font-bold mb-4">What We Do</h2>
+      <div className="relative z-10 mx-auto px-4 py-8 text-center bg-transparent">
+        <h2 className="text-3xl md:text-4xl text-brand-dark-blue font-bold mb-4">What We Do</h2>
 
         <div className="max-w-2xl mx-auto">
           {/* Card Container */}

@@ -21,7 +21,7 @@ interface TalentCardProps {
 export function TalentCard({ member, onSelect }: TalentCardProps) {
   return (
     <div
-      className="border bg-grey-50 rounded-lg p-4 text-center shadow-md hover:shadow-lg cursor-pointer transform transition-all duration-300 scale-95 hover:scale-100 grayscale-[80%] hover:grayscale-0"
+      className="border bg-grey-50 rounded-lg p-4 text-center shadow-md hover:shadow-lg cursor-pointer transform transition-all duration-300 scale-95 hover:scale-100 grayscale-0 md:grayscale-[80%] md:hover:grayscale-0"
       onClick={onSelect}
     >
       {/* The Next.js Image component requires a remotePatterns configuration in next.config.ts to work with external URLs. For now, we assume local images or placeholders. */}

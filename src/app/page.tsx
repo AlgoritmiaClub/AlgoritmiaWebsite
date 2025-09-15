@@ -13,8 +13,8 @@ import { NewHeroSection } from "@/components/home/NewHeroSection";
 import { FeaturedEventSection } from "@/components/home/FeaturedEventSection";
 import { ActivitiesSection } from "@/components/home/ActivitiesSection";
 import { MissionVisionSection } from "@/components/home/MissionVisionSection";
-// import { SuccessStoriesGallery } from "@/components/home/SuccessStoriesGallery";
-import { SuccessStoriesMarquee } from "@/components/home/SuccessStoriesMarquee";
+import { SuccessStoriesGallery } from "@/components/home/SuccessStoriesGallery";
+// import { SuccessStoriesMarquee } from "@/components/home/SuccessStoriesMarquee";
 import { TeamPhotoSection } from "@/components/home/TeamPhotoSection";
 
 /**
@@ -34,10 +34,11 @@ export default async function Home() {
       <NewHeroSection />
       <FeaturedEventSection />
       <HeroSection />
-      <SuccessStoriesMarquee stories={featuredStories} />
+      <SuccessStoriesGallery stories={featuredStories} />
+      {/** <SuccessStoriesMarquee stories={featuredStories} /> */}
       <MissionVisionSection />
       <ActivitiesSection />
-      {/* <SuccessStoriesGallery stories={featuredStories} /> */}
+
       <TeamPhotoSection />
     </main>
   );

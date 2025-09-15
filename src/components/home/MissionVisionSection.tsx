@@ -64,7 +64,7 @@ export function MissionVisionSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
           <div>
             <MissionIcon />
-            <h2 className="text-3xl text-brand-dark-blue font-bold mb-4">Our Mission</h2>
+            <h2 className="text-3xl md:text-4xl text-brand-dark-blue font-bold mb-4">Our Mission</h2>
             <p className="text-gray-600 leading-relaxed">
               To bridge the gap between academic theory and real-world industry
               demands by providing members with hands-on project experience,
@@ -74,7 +74,7 @@ export function MissionVisionSection() {
           </div>
           <div>
             <VisionIcon />
-            <h2 className="text-3xl text-brand-dark-blue font-bold mb-4">Our Vision</h2>
+            <h2 className="text-3xl md:text-4xl text-brand-dark-blue font-bold mb-4">Our Vision</h2>
             <p className="text-gray-600 leading-relaxed">
               To be the university&apos;s most respected and effective launchpad for
               aspiring tech professionals, recognized by top employers as a
