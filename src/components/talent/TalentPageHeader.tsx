@@ -27,12 +27,14 @@ export function TalentPageHeader() {
             Meet the brilliant minds of Algoritmia. A curated directory of our
             skilled members ready to take on new challenges.
           </p>
-          <button
+          {/* Button to open the submission modal 
+            <button
             onClick={() => setIsModalOpen(true)}
             className="mt-6 inline-block bg-brand-blue text-white px-6 py-2 md:px-8 md:py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
-          >
+            >
             Share your career (Work in progress)
-          </button>
+            </button>
+            */}
         </div>
       </section>
       <SubmissionModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

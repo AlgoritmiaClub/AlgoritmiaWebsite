@@ -17,31 +17,41 @@ const EVENTS_PATH = path.join(process.cwd(), "content/events");
  * A repository for fetching event data from local Markdown files.
  */
 export class MarkdownAgendaEventRepository implements IAgendaEventRepository {
+  private async parseEventFile(filePath: string): Promise<AgendaEvent | null> {
+    try {
+      const fileContents = fs.readFileSync(filePath, "utf8");
+      const { data, content } = matter(fileContents);
+      const id = path.basename(filePath).replace(/\.md$/, "");
+
+      // Basic validation
+      if (!data.title || !data.date || !data.imageUrl || !data.description) {
+        console.warn(`Skipping malformed event file: ${path.basename(filePath)}`);
+        return null;
+      }
+
+      return {
+        id,
+        title: data.title,
+        date: new Date(data.date),
+        description: data.description, // The short summary from frontmatter
+        bodyContent: content.trim(), // The detailed content from the markdown body
+        tags: data.tags || [],
+        imageUrl: data.imageUrl,
+      };
+    } catch (error) {
+      console.error(`Error parsing event file ${path.basename(filePath)}:`, error);
+      return null;
+    }
+  }
+
   private async getAllEvents(): Promise<AgendaEvent[]> {
     try {
       const files = fs.readdirSync(EVENTS_PATH);
-      const events = files.map((file) => {
-        try {
-          const filePath = path.join(EVENTS_PATH, file);
-          const fileContents = fs.readFileSync(filePath, "utf8");
-          const { data } = matter(fileContents);
-
-          // The 'T00:00' is added to ensure the date is parsed in the local timezone,
-          // preventing it from shifting to the previous day in timezones behind UTC.
-          return {
-            id: file.replace(/\.md$/, ""),
-            title: data.title,
-            date: new Date(`${data.date}`),
-            description: data.description,
-            tags: data.tags || [],
-            imageUrl: data.imageUrl,
-          } as AgendaEvent;
-        } catch (error) {
-          console.error(`Error parsing event file ${file}:`, error);
-          return null;
-        }
+      const eventPromises = files.map((file) => {
+        const filePath = path.join(EVENTS_PATH, file);
+        return this.parseEventFile(filePath);
       });
-
+      const events = await Promise.all(eventPromises);
       return events.filter((event): event is AgendaEvent => event !== null);
     } catch (error) {
       console.error("Could not read event files:", error);
@@ -49,7 +59,20 @@ export class MarkdownAgendaEventRepository implements IAgendaEventRepository {
     }
   }
 
-  /**
+  async findById(id: string): Promise<AgendaEvent | null> {
+    const filePath = path.join(EVENTS_PATH, `${id}.md`);
+    try {
+      if (!fs.existsSync(filePath)) {
+        return null;
+      }
+      return this.parseEventFile(filePath);
+    } catch (error) {
+      console.error(`Error finding event file ${id}.md:`, error);
+      return null;
+    }
+  }
+
+    /**
    * Finds the single featured event.
    * The featured event is the next upcoming event.
    * @returns A promise that resolves to the featured event or null if not found.

@@ -7,8 +7,7 @@
 
 import { getAgendaEventRepository } from "@/lib/infrastructure/repositories";
 import { getAgendaPageData } from "@/lib/application/use-cases/get-agenda-page-data";
-import { FeaturedEvent } from "@/components/agenda/FeaturedEvent";
-import { ArchivedEvents } from "@/components/agenda/ArchivedEvents";
+import { AgendaView } from "@/components/agenda/AgendaView";
 
 /**
  * The main page component for the Agenda route.
@@ -23,15 +22,10 @@ export default async function AgendaPage() {
   return (
     <main className="bg-gradient-to-b from-white via-blue-50 to-brand-blue pt-12">
       <div className="container mx-auto px-10 py-8">
-        {featuredEvent ? (
-          <FeaturedEvent event={featuredEvent} />
-        ) : (
-          <div className="text-center py-24">
-            <h2 className="text-2xl font-bold text-gray-700">No upcoming events.</h2>
-            <p className="text-gray-500 mt-2">Check back soon for new events!</p>
-          </div>
-        )}
-        <ArchivedEvents events={archivedEvents} />
+        <AgendaView
+          featuredEvent={featuredEvent}
+          archivedEvents={archivedEvents}
+        />
       </div>
     </main>
   );

@@ -13,7 +13,8 @@ export interface AgendaEvent {
   id: string; // e.g., "nadie-sabe-como-romperla"
   title: string;
   date: Date;
-  description: string;
+  description: string; // The short summary from frontmatter
+  bodyContent: string; // The detailed content from the markdown body
   tags: string[];
   imageUrl: string;
 }

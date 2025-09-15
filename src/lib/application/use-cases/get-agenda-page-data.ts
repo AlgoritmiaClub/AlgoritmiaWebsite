@@ -14,7 +14,7 @@ import { FeaturedEventDTO, ArchivedEventDTO } from "../dtos/eventDTOs";
  * @returns {string} The formatted date string.
  */
 function formatFullDate(date: Date): string {
-  return new Intl.DateTimeFormat("es-ES", {
+  return new Intl.DateTimeFormat("en-US", {
     weekday: "long",
     year: "numeric",
     month: "long",
@@ -28,7 +28,7 @@ function formatFullDate(date: Date): string {
  * @returns {string} The formatted date string.
  */
 function formatShortDate(date: Date): string {
-  return new Intl.DateTimeFormat("es-ES", {
+  return new Intl.DateTimeFormat("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -55,13 +55,15 @@ export async function getAgendaPageData(eventRepo: IAgendaEventRepository): Prom
       title: featured.title,
       formattedDate: formatFullDate(featured.date),
       description: featured.description,
+      bodyContent: featured.bodyContent,
       tags: featured.tags,
       imageUrl: featured.imageUrl,
+      date: featured.date, // Pass the raw date object
       card: {
         title: featured.title,
         // This is a placeholder, as the card date format is different.
         // In a real scenario, this might come from a different field.
-        formattedDate: new Intl.DateTimeFormat("es-ES", {
+        formattedDate: new Intl.DateTimeFormat("en-US", {
           month: "long",
           day: "numeric",
           year: "numeric",

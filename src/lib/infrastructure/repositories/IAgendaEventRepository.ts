@@ -23,4 +23,11 @@ export interface IAgendaEventRepository {
    * @returns A promise that resolves to an array of archived events.
    */
   findArchivedEvents(): Promise<AgendaEvent[]>;
+
+  /**
+   * Finds a single event by its unique ID.
+   * @param id - The unique ID of the event to find.
+   * @returns A promise that resolves to the AgendaEvent object or null if not found.
+   */
+  findById(id: string): Promise<AgendaEvent | null>;
 }

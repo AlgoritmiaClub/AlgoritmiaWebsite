@@ -10,6 +10,7 @@ import { ArchivedEventDTO } from "@/lib/application/dtos/eventDTOs";
 
 interface ArchivedEventCardProps {
   event: ArchivedEventDTO;
+  onSelect: (id: string) => void;
 }
 
 /**
@@ -17,9 +18,12 @@ interface ArchivedEventCardProps {
  * @param {ArchivedEventCardProps} props The props for the component.
  * @returns The rendered card.
  */
-export function ArchivedEventCard({ event }: ArchivedEventCardProps) {
+export function ArchivedEventCard({ event, onSelect }: ArchivedEventCardProps) {
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+    <div 
+      className="bg-white/80 backdrop-blur-sm rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
+      onClick={() => onSelect(event.id)}
+    >
       <div className="flex">
         <div className="flex-shrink-0">
           <Image

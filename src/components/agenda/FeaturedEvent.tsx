@@ -10,6 +10,7 @@ import { FeaturedEventCard } from "./FeaturedEventCard";
 
 interface FeaturedEventProps {
   event: FeaturedEventDTO;
+  onSelect: () => void;
 }
 
 /**
@@ -17,7 +18,7 @@ interface FeaturedEventProps {
  * @param {FeaturedEventProps} props The props for the component.
  * @returns The rendered section.
  */
-export function FeaturedEvent({ event }: FeaturedEventProps) {
+export function FeaturedEvent({ event, onSelect }: FeaturedEventProps) {
   return (
     <section className="grid md:grid-cols-2 gap-12 items-center p-8">
       <div className="text-left">
@@ -31,11 +32,11 @@ export function FeaturedEvent({ event }: FeaturedEventProps) {
             </span>
           ))}
         </div>
-        <button className="mt-8 bg-brand-dark-blue text-white font-bold py-3 px-8 rounded-full hover:bg-brand-blue transition-colors duration-300">
+        {/* <button className="mt-8 bg-brand-dark-blue text-white font-bold py-3 px-8 rounded-full hover:bg-brand-blue transition-colors duration-300">
           RSVP (Work in progress)
-        </button>
+        </button> */}
       </div>
-      <div>
+      <div onClick={onSelect} className="cursor-pointer">
         <FeaturedEventCard card={event.card} />
       </div>
     </section>
