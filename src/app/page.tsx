@@ -32,8 +32,8 @@ export default async function Home() {
   return (
     <main>
       <NewHeroSection />
-      <FeaturedEventSection />
       <HeroSection />
+      <FeaturedEventSection />
       <SuccessStoriesGallery stories={featuredStories} />
       {/** <SuccessStoriesMarquee stories={featuredStories} /> */}
       <MissionVisionSection />
