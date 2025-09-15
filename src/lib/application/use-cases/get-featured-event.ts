@@ -14,7 +14,7 @@ export interface HomepageFeaturedEvent {
  * @returns The formatted date string.
  */
 function formatEventDate(date: Date): string {
-  return new Intl.DateTimeFormat("es-ES", {
+  return new Intl.DateTimeFormat("en-US", {
     dateStyle: "full",
   }).format(date);
 }

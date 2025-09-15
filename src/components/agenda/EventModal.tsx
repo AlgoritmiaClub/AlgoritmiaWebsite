@@ -19,7 +19,7 @@ interface EventModalProps {
  */
 export function EventModal({ event, onClose }: EventModalProps) {
   // Format the date for display
-  const formattedDate = new Intl.DateTimeFormat("es-ES", {
+  const formattedDate = new Intl.DateTimeFormat("en-US", {
     weekday: "long",
     year: "numeric",
     month: "long",
