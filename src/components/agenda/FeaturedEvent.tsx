@@ -21,7 +21,7 @@ export function FeaturedEvent({ event }: FeaturedEventProps) {
   return (
     <section className="grid md:grid-cols-2 gap-12 items-center p-8">
       <div className="text-left">
-        <h1 className="text-5xl font-extrabold text-brand-dark-blue leading-tight">{event.title}</h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-brand-dark-blue leading-tight">{event.title}</h1>
         <p className="mt-4 text-xl font-semibold text-gray-700">{event.formattedDate}</p>
         <p className="mt-6 text-gray-600">{event.description}</p>
         <div className="mt-6 flex gap-2">

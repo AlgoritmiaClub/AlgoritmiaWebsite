@@ -8,8 +8,8 @@ import Link from "next/link";
 export function NewHeroSection() {
   return (
     <section className="w-full min-h-screen flex items-center justify-center p-4 bg-[url('/images/mosaicos.png')] bg-cover bg-center">
-      <div className="w-full max-w-7xl rounded-2xl flex flex-col items-center justify-center text-center py-24 px-8">
-        <h1 className="font-bold text-5xl md:text-6xl text-white max-w-4xl">
+      <div className="w-full max-w-7xl rounded-2xl flex flex-col items-center justify-center text-center py-20 px-4 sm:px-8 md:py-24">
+        <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl text-white max-w-4xl">
           We also thought that Windows was better than Linux
         </h1>
         <p className="text-lg md:text-xl text-white mt-4">

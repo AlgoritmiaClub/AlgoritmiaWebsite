@@ -37,7 +37,7 @@ export function SuccessStoriesMarquee({ stories }: SuccessStoriesMarqueeProps) {
           <div className="flex animate-[scroll_40s_linear_infinite] group-hover:[animation-play-state:paused]">
             {duplicatedStories.map((story, index) => (
               // Use a fixed width for each card to ensure smooth animation
-              <div key={index} className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-4">
+              <div key={index} className="flex-shrink-0 w-[80%] sm:w-1/2 md:w-1/3 p-4">
                 <SuccessStoryCard story={story} />
               </div>
             ))}

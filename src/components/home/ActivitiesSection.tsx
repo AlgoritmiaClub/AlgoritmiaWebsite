@@ -151,7 +151,7 @@ export function ActivitiesSection() {
 
         <div className="max-w-2xl mx-auto">
           {/* Card Container */}
-          <div className="relative h-[200px]">
+          <div className="relative min-h-[220px] sm:min-h-[200px]">
             {activities.map((activity, index) => (
               <ActivityCard
                 key={activity.title}

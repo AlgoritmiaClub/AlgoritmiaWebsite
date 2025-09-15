@@ -20,16 +20,16 @@ export function TalentPageHeader() {
 
   return (
     <>
-      <section className="mb-12 flex items-center py-12 text-left bg-[url('/images/Frame_91.png')] bg-no-repeat bg-right bg-contain">
+      <section className="mb-12 flex items-center py-12 text-left bg-none md:bg-[url('/images/Frame_91.png')] md:bg-no-repeat md:bg-right md:bg-contain">
         <div>
-          <h1 className="text-5xl font-extrabold text-white">Our Talent</h1>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">Our Talent</h1>
           <p className="mt-4 text-lg text-white max-w-2xl [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
             Meet the brilliant minds of Algoritmia. A curated directory of our
             skilled members ready to take on new challenges.
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="mt-6 inline-block bg-brand-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
+            className="mt-6 inline-block bg-brand-blue text-white px-6 py-2 md:px-8 md:py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
           >
             Share your career (Work in progress)
           </button>

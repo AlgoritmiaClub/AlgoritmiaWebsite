@@ -15,7 +15,7 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer className="bg-white text-brand-blue">
-      <div className="container mx-auto flex justify-between items-center py-5 px-6 text-sm">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 py-5 px-6 text-sm text-center md:text-left">
         <div className="flex items-center gap-3">
           <Link href="/" aria-label="Homepage">
             <Image

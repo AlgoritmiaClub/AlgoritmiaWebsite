@@ -19,7 +19,7 @@ export async function FeaturedEventSection() {
         <p className="text-sm font-bold uppercase tracking-wider text-brand-blue">
           Upcoming Event
         </p>
-        <h2 className="mt-4 text-4xl font-bold text-brand-dark-blue">
+        <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-brand-dark-blue">
           {event.title}
         </h2>
         <p className="mt-2 text-lg text-slate-600 capitalize">

@@ -28,9 +28,10 @@ export function ActivityCard({
   return (
     <div
       className={`absolute inset-0 p-8 rounded-2xl bg-brand-blue/20 backdrop-blur-lg border border-brand-dark-blue/20 shadow-lg transition-all duration-500 ease-in-out hover:border-brand-dark-blue/40
-        ${isActive
-          ? "z-20 opacity-100 transform-none"
-          : isNext
+        ${
+          isActive
+            ? "z-20 opacity-100 transform-none"
+            : isNext
             ? "z-10 opacity-100 transform scale-85 translate-y-9"
             : "z-0 opacity-0 transform scale-80 translate-y-12"
         }
@@ -39,8 +40,8 @@ export function ActivityCard({
       <div className="flex items-start space-x-4">
         <div className="flex-shrink-0 text-white">{icon}</div>
         <div>
-          <h3 className="text-2xl font-bold text-white">{title}</h3>
-          <p className="mt-2 leading-relaxed">{description}</p>
+          <h3 className="text-xl sm:text-2xl font-bold text-white">{title}</h3>
+          <p className="mt-2 leading-relaxed text-sm sm:text-base">{description}</p>
         </div>
       </div>
     </div>
