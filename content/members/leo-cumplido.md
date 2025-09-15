@@ -12,4 +12,4 @@ githubUrl: "https://github.com/LeoCumpli21"
 
 Software engineer with a passion for uncovering insights within data.
 Studied data science and mathematics.
-Creator of this web page :)  
+Creator of this website :)  
